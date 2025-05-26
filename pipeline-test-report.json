@@ -1,0 +1,25 @@
+﻿{
+    "Timestamp":  "2025-05-24 19:26:17",
+    "Project":  "TestProject",
+    "CommonTests":  {
+                        "SecurityScore":  100,
+                        "HasSecurityIssues":  false,
+                        "CompatibilityRate":  83.33,
+                        "StandardsCompliance":  87.5,
+                        "Score":  90.28,
+                        "Recommendation":  "[FAIL] Poor - Major refactoring required"
+                    },
+    "ProjectTests":  {
+                         "Result":  "FAILED",
+                         "Available":  true
+                     },
+    "Pipeline":  {
+                     "CriticalIssues":  [
+                                            "Project-specific tests failed"
+                                        ],
+                     "Warnings":  [
+
+                                  ],
+                     "CanDeploy":  false
+                 }
+}

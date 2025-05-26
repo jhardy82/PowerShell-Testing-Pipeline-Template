@@ -1,0 +1,28 @@
+# PowerShell Quality Workflow
+
+name: PowerShell Quality
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PowerShell
+        uses: actions/setup-powershell@v2
+        with:
+          powershell-version: "5.1"
+
+      - name: Run PSScriptAnalyzer
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse
