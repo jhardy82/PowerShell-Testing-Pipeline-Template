@@ -127,7 +127,7 @@ function Test-PowerShellCompatibility {
     return [PSCustomObject]$results
 }
 
-function Test-AvanadeStandards {
+function Test-PersonalStandards {
     <#
     .SYNOPSIS
         Tests adherence to Avanade PowerShell coding standards.
@@ -384,7 +384,7 @@ function Invoke-CommonProjectTests {
     $compatibilityResults = Test-PowerShellCompatibility -Path $ProjectPath -Recurse
 
     Write-Host "  [STANDARDS] Testing Avanade standards compliance..." -ForegroundColor Cyan
-    $standardsResults = Test-AvanadeStandards -Path $ProjectPath -Recurse
+    $standardsResults = Test-PersonalStandards -Path $ProjectPath -Recurse
 
     Write-Host "  Security Testing security best practices..." -ForegroundColor Cyan
     $securityResults = Test-SecurityBestPractices -Path $ProjectPath -Recurse
@@ -444,7 +444,7 @@ function Invoke-CommonProjectTests {
 # Export functions
 Export-ModuleMember -Function @(
     'Test-PowerShellCompatibility',
-    'Test-AvanadeStandards',
+    'Test-PersonalStandards',
     'Test-SecurityBestPractices',
     'Invoke-CommonProjectTests'
 )

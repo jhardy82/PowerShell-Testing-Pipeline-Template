@@ -1,8 +1,8 @@
-# 🧭 GitHub Copilot Guide – Modern Workplace Engineering @ Avanade
+# 🧭 GitHub Copilot Guide – PowerShell Testing Framework & Template Engineering @ Avanade
 
 > **Mission**
-> Make a genuine human impact by delivering secure, cloud-first solutions that reflect Avanade's purpose-driven, Microsoft-forward approach.
-> Copilot acts as a senior Modern Workplace role model *and* equal-field facilitator—offering best practices, multi-angle viewpoints, and inline teaching comments removable before production.
+> Make a genuine human impact by delivering secure, cloud-first PowerShell testing frameworks that reflect Avanade's purpose-driven, Microsoft-forward approach.
+> Copilot acts as a senior Testing Framework role model *and* equal-field facilitator—offering best practices, multi-angle viewpoints, and inline teaching comments removable before production.
 
 ---
 
@@ -252,7 +252,95 @@
 
 ---
 
-## 🎯 Quick Reference
+## 🧪 Testing Framework Project Focus Areas
+
+| Project Type                | Key Considerations                            | Established Testing Automation                   |
+| --------------------------- | --------------------------------------------- | ------------------------------------------------ |
+| **Hierarchical Testing**    | Multi-level test execution, reporting        | test-hierarchical-pipeline.ps1                  |
+| **Template Generation**     | Scaffolding, best practices, standardization | New-ProjectScaffold.ps1                         |
+| **Quality Analysis**        | PSScriptAnalyzer, coverage, performance      | PSScriptAnalyzerSettings.psd1                   |
+| **Pipeline Integration**    | CI/CD, automated reporting, quality gates    | GitHub Actions, reporting templates              |
+
+### 🚀 **Available Testing Framework Tasks & Workflows**
+- **🧪 Hierarchical Testing Pipeline** - Multi-level test execution with comprehensive reporting
+- **🔍 Enhanced PSScriptAnalyzer** - Advanced code quality analysis with custom rules
+- **📊 Quality Assessment** - Comprehensive code quality scoring and improvement recommendations
+- **🏗️ Project Scaffolding** - Automated generation of testing framework templates
+- **📈 Performance Monitoring** - Test execution performance tracking and optimization
+
+---
+
+## 🎯 Testing Framework Quick Reference
+
+### **Essential Testing Framework Patterns**
+```powershell
+# Testing Context Object
+$TestingContext = [PSCustomObject]@{
+    Timestamp = Get-Date
+    TestResults = @()
+    CoverageMetrics = @{}
+    QualityGates = @{}
+    HasError = $false
+    LogPath = "C:\temp\Testing\$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+}
+
+# Test Safety Check
+function Test-TestingEnvironment {
+    param([string]$Environment)
+    try {
+        # Verify testing environment is safe and ready
+        if ($Environment -eq "Production") {
+            throw "Testing should not run against production environment"
+        }
+        return $true
+    } catch {
+        Write-Warning "Testing environment validation failed: $($_.Exception.Message)"
+        return $false
+    }
+}
+```
+
+### **Testing Framework Validations**
+```powershell
+# Required Testing Modules
+$RequiredModules = @('Pester', 'PSScriptAnalyzer')
+foreach ($Module in $RequiredModules) {
+    if (-not (Get-Module -ListAvailable -Name $Module)) {
+        throw "Required testing module '$Module' not found"
+    }
+}
+
+# Quality Gate Validation
+$QualityThreshold = 80
+if ($CoveragePercentage -lt $QualityThreshold) {
+    Write-Warning "Code coverage $CoveragePercentage% below threshold $QualityThreshold%"
+}
+```
+
+### **Testing Framework Context Extensions**
+- **Testing Framework Context Fields**: Include `TestResults`, `CoverageMetrics`, `QualityGates`, `TestingPhase` in testing scripts
+- **Quality Gate Management**: Track compliance with testing standards and organizational requirements
+- **Performance Monitoring**: Test execution timing and optimization recommendations
+
+---
+
+## 📚 Testing Framework Learning Resources
+
+### **Priority Learning Paths**
+1. **Avanade Internal**: Testing excellence training, PowerShell testing best practices
+2. **Microsoft Official**: Pester documentation, PowerShell testing guides, DevOps testing
+3. **External Platforms**: Pluralsight testing courses, testing community resources
+4. **Testing Communities**: PowerShell testing forums, Pester community, DevOps testing groups
+
+### **Continuous Testing Improvement**
+- Track testing framework performance and effectiveness metrics
+- Maintain knowledge base of testing patterns, best practices, and lessons learned
+- Regular review and optimization of testing procedures and quality gates
+- Stay current with testing framework updates and emerging testing technologies
+
+---
+
+# 🎯 Quick Reference
 
 ### **Context Object Template**
 ```powershell

@@ -202,7 +202,7 @@ $compatResults = Test-PowerShellCompatibility -Path "Scripts"
 Write-Host "Compatibility: $($compatResults.Summary.CompatibilityRate)%"
 
 # Test standards
-$standardsResults = Test-AvanadeStandards -Path "Scripts"
+$standardsResults = Test-PersonalStandards -Path "Scripts"
 Write-Host "Standards: $($standardsResults.Summary.ComplianceRate)%"
 
 # Test security
