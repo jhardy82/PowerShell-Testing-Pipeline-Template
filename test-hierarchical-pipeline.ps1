@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+#Requires -Version 7.0
 <#
 .SYNOPSIS
     Demonstrates the hierarchical testing pipeline for PowerShell repository.

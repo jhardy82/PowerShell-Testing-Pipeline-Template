@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+#Requires -Version 7.0
 <#
 .SYNOPSIS
     Creates a new PowerShell project with enterprise testing pipeline structure.
@@ -230,7 +230,7 @@ if ($IncludeExamples) {
 
     # Example script
     $exampleScriptContent = @"
-#Requires -Version 5.1
+#Requires -Version 7.0
 <#
 .SYNOPSIS
     Example PowerShell script following Avanade enterprise standards.
